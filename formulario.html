@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Enviado</title>
+</head>
+<body>
+    <h2>Información Enviada</h2>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Correo Electrónico:</strong> <span id="correo"></span></p>
+    <p><strong>Mensaje:</strong> <span id="mensaje"></span></p>
+
+    <script>
+        // Obtener los parámetros de la URL y mostrarlos en la página
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get("nombre");
+        const correo = params.get("correo");
+        const mensaje = params.get("mensaje");
+
+        // Verificar si los valores no son nulos
+        document.getElementById("nombre").textContent = nombre ? nombre : "No proporcionado";
+        document.getElementById("correo").textContent = correo ? correo : "No proporcionado";
+        document.getElementById("mensaje").textContent = mensaje ? mensaje : "No proporcionado";
+    </script>
+</body>
+</html>
